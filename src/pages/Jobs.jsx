@@ -1,61 +1,9 @@
-// import { useEffect, useState } from "react";
-
-// export default function Jobs() {
-//   const [jobs, setJobs] = useState([]);
-//   const [title, setTitle] = useState("");
-
-//   // fetch jobs
-//   useEffect(() => {
-//     fetch("/api/jobs").then(r => r.json()).then(setJobs);
-//   }, []);
-
-//   // add job
-//   function addJob() {
-//     if (!title.trim()) return alert("Title required");
-//     fetch("/api/jobs", {
-//       method: "POST",
-//       body: JSON.stringify({ title, status: "active" })
-//     })
-//       .then(r => r.json())
-//       .then(j => setJobs([...jobs, j]));
-//     setTitle("");
-//   }
-
-//   // toggle archive
-//   function toggleStatus(id) {
-//     setJobs(jobs.map(j =>
-//       j.id === id ? { ...j, status: j.status === "active" ? "archived" : "active" } : j
-//     ));
-//   }
-
-//   return (
-//     <div>
-//       <h2>Jobs</h2>
-
-//       <input
-//         value={title}
-//         onChange={e => setTitle(e.target.value)}
-//         placeholder="Job title"
-//       />
-//       <button onClick={addJob}>Add</button>
-
-//       <ul>
-//         {jobs.map(j => (
-//           <li key={j.id}>
-//             {j.title} ({j.status})
-//             <button onClick={() => toggleStatus(j.id)}>
-//               {j.status === "active" ? "Archive" : "Unarchive"}
-//             </button>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
 
 
 import { useEffect, useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
+
 
 export default function Jobs() {
   const [jobs, setJobs] = useState([]);
